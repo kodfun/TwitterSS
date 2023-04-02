@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter SS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <form>
+    <label for="desc">Description</label>
+    <input type="text" name="desc" id="desc" placeholder="Description" value="When the air conditioner wanted to disappear into the wall, the negative margin-right came to the rescue. 😜👍">
+    <label for="hashtag">HashTag</label>
+    <input type="text" name="hashtag" id="hashtag" placeholder="#hashtag" value="#WebDevelopment #CSSFail">
+    <label for="hashtag">Image</label>
+    <input type="file" name="image" id="image">
+  </form>
+
+  <div class="result">
+    <div class="box">
+      <div class="box-header">
+        <div class="box-header-left">
+          <img class="box-header-logo" src="img/logo.png" alt="Twitter Logo">
+        </div>
+        <div class="box-header-text">
+          <div class="box-header-username">KodFun</div>
+          <div class="box-header-mention">@KodFun</div>
+        </div>
+        <div class="box-header-right">
+          <img src="img/twitter.png" alt="twitter logo">
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="box-body-text"></div>
+        <div class="box-body-tags"></div>
+      </div>
+      <div class="box-image">
+        <img src="img/image.png" alt="image">
+      </div>
+    </div>
+
+    <script>
+      const txtDesc = document.querySelector('#desc');
+      const txtTags = document.querySelector('#hashtag');
+      const inputImage = document.querySelector('#image');
+      const image = document.querySelector('.box-image img');
+
+      inputImage.onchange = function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        console.log(event);
+        reader.onload = function(event) {
+          image.src = event.target.result;
+        }
+        reader.readAsDataURL(file);
+      };
+
+      function generate() {
+        const desc = txtDesc.value;
+        const hashtags = txtTags.value.split(" ").map((item) => {
+          return `<span class="box-body-tag">${item}</span>`
+        }).join(" ");
+
+        document.querySelector('.box-body-text').innerHTML = desc;
+        document.querySelector('.box-body-tags').innerHTML = hashtags;
+      }
+
+      generate();
+      txtDesc.oninput = generate;
+      txtTags.oninput = generate;
+      
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.result {
+  display: flex;
+  width: 1080px;
+  height: 1350px;
+  background-image: linear-gradient(to right bottom, rgb(253, 161, 255), rgb(254, 211, 211), rgb(102, 179, 255));
+  font-family: Inter, sans-serif;
+}
+
+.box {
+  background-color: white;
+  margin: auto 90px;
+  padding: 60px 70px;
+  border-radius: 30px;
+}
+
+.box-header {
+  display: flex;
+  margin-bottom: 20x;
+}
+
+.box-header-left {
+  flex: 150;
+}
+
+.box-header-left>img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.box-header-text {
+  flex: 870;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 24px;
+}
+
+.box-header-right {
+  flex: 80;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-header-right>img {
+  width: 100%;
+  height: auto;
+}
+
+.box-header-username {
+  font-size: 36px;
+  font-weight: 700;
+  color: rgb(15, 20, 25);
+}
+
+.box-header-mention {
+  font-size: 30px;
+  font-weight: 400;
+  color: rgb(83, 100, 113);
+}
+
+.box-body {
+  margin-bottom: 40px;
+}
+
+.box-body-text {
+  line-height: 60px;
+  font-size: 40px;
+  color: rgb(15, 20, 25);
+}
+
+.box-body-tags {
+  margin-top: 10px;
+}
+
+.box-body-tag {
+  font-size: 30px;
+  font-weight: 400;
+  color: rgb(29, 155, 240);
+}
+
+.box-image>img {
+  width: 100%;
+}
+
