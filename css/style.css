@@ -73,9 +73,15 @@ input[type="text"] {
 }
 
 .box-header-username {
+  display: flex;
+  align-items: center;
   font-size: 36px;
   font-weight: 700;
   color: rgb(15, 20, 25);
+}
+
+.box-header-username>img {
+  margin-left: 4px;
 }
 
 .box-header-mention {
