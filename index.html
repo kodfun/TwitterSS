@@ -16,9 +16,9 @@
 <body>
   <form>
     <label for="desc">Description</label>
-    <input type="text" name="desc" id="desc" placeholder="Description" value="When the air conditioner wanted to disappear into the wall, the negative margin-right came to the rescue. 😜👍">
+    <input type="text" name="desc" id="desc" placeholder="Description" value="En İyi “Ses Düzeyi Ayarı”  Yarışması 😜👍">
     <label for="hashtag">HashTag</label>
-    <input type="text" name="hashtag" id="hashtag" placeholder="#hashtag" value="#WebDevelopment #CSSFail">
+    <input type="text" name="hashtag" id="hashtag" placeholder="#hashtag" value="#DesignFail #WhatWereTheyThinking">
     <label for="hashtag">Image</label>
     <input type="file" name="image" id="image">
   </form>
@@ -34,7 +34,7 @@
           <div class="box-header-mention">@KodFun</div>
         </div>
         <div class="box-header-right">
-          <img src="img/twitter.png" alt="twitter logo">
+          <img class="x" src="img/x.jpg" alt="twitter logo">
         </div>
       </div>
       <div class="box-body">
@@ -42,7 +42,7 @@
         <div class="box-body-tags"></div>
       </div>
       <div class="box-image">
-        <img src="img/image.png" alt="image">
+        <img src="img/placeholder.png" alt="image">
       </div>
     </div>
 
@@ -76,6 +76,9 @@
       txtDesc.oninput = generate;
       txtTags.oninput = generate;
       
+      document.body.ondblclick = function() {
+        document.querySelector("form").style.display = "none";
+      }
     </script>
 </body>
 
